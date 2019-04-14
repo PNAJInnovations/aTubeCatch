@@ -1,0 +1,265 @@
+ScreenManager:
+    StartScreen:
+	SelectScreen:
+    VideoScreen:
+	PlaylistScreen:
+    EndScreen:
+<StartScreen>:
+	GridLayout:
+		rows:3
+		cols:3
+		padding: 0,100,0,170
+		Label:
+			text:
+		Label:
+			text:
+		Label:
+			text:
+		Label:
+			text:
+		Button:
+			background_color: 0, 0, 0, 0
+			Image:
+				source: 'img/icon.png'
+				y: self.parent.y + self.parent.height - 100
+				x: self.parent.width/2.0 + 15
+				size: 250, 250
+				allow_stretch: True
+		Label:
+			text:
+		Label:
+			text:
+		Label:
+			markup: True
+			text: "[size=40][color=ff0000][b]aTubeCatch[/b][/color][/size]"
+		Label:
+			text:
+	AnchorLayout:
+		anchor_x: 'center'
+		anchor_y: 'bottom'
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: 1, .1
+			Button:
+				background_color: 0,0,0
+				markup: True
+				on_press: app.root.current = 'select_screen'
+				text: "[size=40][color=33ff33][b]Start[/b][/color][/size]"
+				canvas.before:
+					Color:
+						rgba: 1, 0, 0 ,0.5
+					Rectangle:
+            			pos: self.pos
+            			size: self.size
+            			
+				
+<SelectScreen>:
+	name: 'select_screen'
+	GridLayout:
+		padding:70
+		rows:2
+		spacing: 30, 30
+		Button:
+			text:'Video'
+			on_press: app.root.current = 'video_screen'
+			background_color: 0, 0, 0, 0
+			Image:
+				source: 'img/video.png'
+				center_x: self.parent.center_x
+        		center_y: self.parent.center_y
+				size: 200,200
+				allow_stretch: True
+		Button:
+			text:'Playlist'
+			on_press: app.root.current = 'playlist_screen'
+			background_color: 0, 0, 0, 0
+			Image:
+				source: 'img/playlist.png'
+				center_x: self.parent.center_x
+        		center_y: self.parent.center_y
+				size: 200, 200
+				allow_stretch: True
+			
+<VideoScreen>:
+    name: 'video_screen'
+	BoxLayout:
+        AnchorLayout:
+			anchor_x: 'center'
+			anchor_y: 'top'
+			BoxLayout:
+				orientation: 'horizontal'
+				size_hint_y: None
+				size_hint_x: 1
+				Label:
+					id:toolbartext1
+					size: self.width, self.height / 2.5
+					markup: True
+					size : self.texture_size
+                    text: "[size=40][color=33ff33][b]Video Downloader[/b][/color][/size]"
+					bcolor: 1, 0, 0 ,0.5
+					canvas.before:
+						Color:
+							rgba: self.bcolor
+						Rectangle:
+							pos:self.pos
+							size:self.size
+							#pos: 0,self.center_y+10
+							#size: self.width, self.height / 2.5
+							#radius: [50,] 
+			GridLayout:
+				rows:1
+				padding:50,150,50,420
+				TextInput:
+					id: vidtxt
+					hint_text: 'Enter URL'
+					multiline:False
+					focus:True
+				#Button:
+				#	id: urlpush1
+				#	size_hint_x: 0.40 
+				#	text:"Download"
+				#	on_press : root.download()
+			GridLayout:
+				rows:2
+				padding:50,280,50,200
+				Button:
+					text:'Audio'
+					on_press : root.downloadAudio()
+				Button:
+					text:'360'
+					on_press : root.download360()
+				Button:
+					text:'480'
+					on_press : root.download480()
+				Button:
+					text:'720'
+					on_press : root.download720()
+			GridLayout:
+				rows:2	
+				padding:50,400,50,150
+				Button:
+					text:'1080'
+					on_press : root.download1080()
+				
+			AnchorLayout:
+				anchor_x: 'center'
+				anchor_y: 'bottom'
+				BoxLayout:
+					orientation: 'horizontal'
+					size_hint: 1, .1
+					Button:
+						on_press: app.root.current = 'select_screen'
+						text: "Back"
+					Button:
+						on_press: app.root.current = 'second_screen'
+						text: "Exit"
+<PlaylistScreen>:
+    name: 'playlist_screen'
+	BoxLayout:
+        AnchorLayout:
+			anchor_x: 'center'
+			anchor_y: 'top'
+			BoxLayout:
+				orientation: 'horizontal'
+				size_hint_y: None
+				size_hint_x: 1
+				Label:
+					id:toolbartext2
+					size: self.width, self.height / 2.5
+					markup: True
+					size : self.texture_size
+                    text: "[size=40][color=33ff33][b]Playlist Downloader[/b][/color][/size]"
+					bcolor: 1, 0, 0 ,0.5
+					canvas.before:
+						Color:
+							rgba: self.bcolor
+						Rectangle:
+							pos: self.pos
+							size: self.size 
+			GridLayout:
+				rows:1
+				padding:50,150,50,420
+				TextInput:
+					id: playtxt
+					hint_text: 'Enter URL'
+					multiline:False
+					focus:True
+				#Button:
+				#	id: urlpush1
+				#	size_hint_x: 0.40 
+				#	text:"Download"
+				#	on_press : root.download()
+			GridLayout:
+				rows:2
+				padding:50,280,50,200
+				Button:
+					text:'Audio'
+					on_press : root.downloadAudio()
+				Button:
+					text:'360'
+					on_press : root.download360()
+				Button:
+					text:'480'
+					on_press : root.download480()
+				Button:
+					text:'720'
+					on_press : root.download720()
+			GridLayout:
+				rows:2	
+				padding:50,400,50,150
+				Button:
+					text:'1080'
+					on_press : root.download1080()
+
+			AnchorLayout:
+				anchor_x: 'center'
+				anchor_y: 'bottom'
+				BoxLayout:
+					orientation: 'horizontal'
+					size_hint: 1, .1
+					Button:
+						on_press: app.root.current = 'select_screen'
+						text: "Back"
+					Button:
+						on_press: app.root.current = 'second_screen'
+						text: "Exit"
+<EndScreen>:
+	name: 'second_screen'
+	GridLayout:
+		rows:3
+		cols:3
+		padding: 0,100,0,170
+		Label:
+			text:
+		Label:
+			text:
+		Label:
+			text:
+		Label:
+			text:
+		Button:
+			background_color: 0, 0, 0, 0
+			Image:
+				source: 'img/thanks.png'
+				y: self.parent.y + self.parent.height - 100
+				x: self.parent.width/2.0 + 15
+				size: 250, 250
+				allow_stretch: True
+		Label:
+			text:
+		Label:
+			text:
+		Label:
+			text:
+		Label:
+			text:
+    AnchorLayout:
+		anchor_x: 'center'
+		anchor_y: 'bottom'
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: 1, .1
+			Button:
+				on_press: app.stop()
+				text: "Exit"
+			
