@@ -27,10 +27,6 @@ pip install ffmpeg-python
 
 After installing all the dependencies. You can simply test the application by running the `Vidget.py` file.
 
-## Deployment
-
-[![aTubeCatch](https://img.youtube.com/vi/Tou-jkOO51U/2.jpg)](https://www.youtube.com/watch?v=Tou-jkOO51U "aTubeCatch")
-
 ## Built With
 
 * [Kivy](https://kivy.org/) - The GUI framework used
