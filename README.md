@@ -1,5 +1,11 @@
 # aTubeCatch
 aTubeCatch is OpenSource Code, written by Students from India under Campus Revolutionist Program.
+<p align="center">
+<a href="https://www.youtube.com/watch?v=Tou-jkOO51U">
+<img width="460" height="300" src="https://img.youtube.com/vi/Tou-jkOO51U/0.jpg">
+</a>
+</p>
+
 
 ## Getting Started
 
@@ -17,27 +23,9 @@ pip install kivy
 pip install ffmpeg-python
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
-Explain how to run the automated tests for this system
+After installing all the dependencies. You can simply test the application by running the `Vidget.py` file.
 
 ### Break down into end to end tests
 
