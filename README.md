@@ -39,11 +39,19 @@ After installing all the dependencies. You can simply test the application by ru
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
-## Authors
+## Author
 
 * **Shashank Khandelwal** - *Initial work*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+## Team
+
+See also the list of  who participated in this project.
+
+* **[Shashank Khandelwal](https://www.linkedin.com/in/shashank-khandelwal/)** - *Team Lead*
+* **[Rahul Thorat](https://www.linkedin.com/in/rahul-thorat/)**
+* **[Anish Mazumdar](https://www.linkedin.com/in/anish-mazumdar-b87736172/)**
+* **[Prashanth Kumar](https://www.linkedin.com/in/prashanthkumar17/)**
+* **[Karan Singh Thakur](https://www.linkedin.com/in/karan-singh-thakur-87b930161/)**
 
 ## License
 
